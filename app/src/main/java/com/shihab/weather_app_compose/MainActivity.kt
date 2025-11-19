@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.shihab.weather_app_compose.ui.screen.WeatherScreen
 import com.shihab.weather_app_compose.ui.theme.WeatherAppComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,11 +19,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            WeatherAppComposeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+            setContent {
+                WeatherAppComposeTheme {
+                    WeatherScreen(
+                        viewModel = com.shihab.weather_app_compose.viewmodel.WeatherViewModel()
                     )
                 }
             }

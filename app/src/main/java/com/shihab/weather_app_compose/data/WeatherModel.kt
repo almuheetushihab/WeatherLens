@@ -1,19 +1,21 @@
 package com.shihab.weather_app_compose.data
 
+import androidx.compose.ui.graphics.vector.ImageVector
+
 data class CurrentWeather(
     val city: String,
-    val temperature: Int, // C
+    val temperature: Int,
     val description: String,
-    val humidity: Int, // %
-    val windSpeed: Double, // km/h
-    val iconResId: Int // ড্রয়েবল রিসোর্স আইডি (উদাহরণ: R.drawable.ic_sun)
+    val humidity: Int,
+    val windSpeed: Double,
+    val iconVector: ImageVector
 )
 
-// দৈনিক পূর্বাভাসের জন্য তথ্য
+
 data class DailyForecast(
     val day: String,
     val maxTemp: Int,
     val minTemp: Int,
     val description: String,
-    val iconResId: Int
+    val iconVector: ImageVector
 )
