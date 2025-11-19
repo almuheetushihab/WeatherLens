@@ -35,7 +35,7 @@ fun CurrentWeatherCard(weather: CurrentWeather) {
 
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Image(
-                    painter = painterResource(id = weather.iconResId),
+                    imageVector = weather.iconVector,
                     contentDescription = weather.description,
                     modifier = Modifier.size(64.dp)
                 )

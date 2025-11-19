@@ -34,7 +34,7 @@ fun ForecastItem(forecast: DailyForecast) {
         )
 
         Image(
-            painter = painterResource(id = forecast.iconResId),
+            imageVector = forecast.iconVector,
             contentDescription = forecast.description,
             modifier = Modifier.size(32.dp).weight(1f)
         )
