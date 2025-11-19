@@ -21,9 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             setContent {
                 WeatherAppComposeTheme {
-                    WeatherScreen(
-                        viewModel = com.shihab.weather_app_compose.viewmodel.WeatherViewModel()
-                    )
+                    WeatherScreen()
                 }
             }
         }
