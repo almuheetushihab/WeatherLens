@@ -44,7 +44,6 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
         topBar = {
             TopAppBar(
                 title = { Text("Real-Time Weather", fontWeight = FontWeight.Bold) },
-                // ... (বাকি TopAppBar কোড)
             )
         }) { paddingValues ->
         Column(
@@ -55,14 +54,12 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
 
             when (uiState) {
                 is WeatherUiState.Loading -> {
-                    // লোডিং স্টেট: মাঝখানে একটি প্রোগ্রেস বার দেখাবে
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         CircularProgressIndicator()
                     }
                 }
 
                 is WeatherUiState.Error -> {
-                    // এরর স্টেট: এরর মেসেজ দেখাবে
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         Text(
                             text = "Error: ${uiState.message}",
@@ -72,7 +69,6 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
                 }
 
                 is WeatherUiState.Success -> {
-                    // সাকসেস স্টেট: আসল ডেটা সহ কার্ড দেখাবে
                     CurrentWeatherCard(weather = uiState.weather.iconCode.let {
                         com.shihab.weather_app_compose.data.CurrentWeather(
                             city = uiState.weather.city,
@@ -93,7 +89,6 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
                         )
                     })
 
-                    // আপনি চাইলে এখানে 5-দিনের ফোরকাস্ট লিস্টও যোগ করতে পারেন
                     Text(
                         text = "5-Day Forecast (API Integration Needed)",
                         modifier = Modifier.padding(16.dp),
