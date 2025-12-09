@@ -1,17 +1,15 @@
 package com.shihab.weather_app_compose.ui
 
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import com.shihab.weather_app_compose.R
 
 fun getWeatherAnimation(iconCode: String): Int {
     return when (iconCode) {
-        "01d", "01n" -> MaterialTheme.i
+        "01d", "01n" -> R.raw.sunny
         "02d", "02n", "03d", "03n", "04d", "04n" -> R.raw.cloudy
         "09d", "09n", "10d", "10n" -> R.raw.rain
-        "11d", "11n" -> R.raw.storm
+        "11d", "11n" -> R.raw.rain
         "13d", "13n" -> R.raw.snow
         else -> R.raw.sunny
     }
