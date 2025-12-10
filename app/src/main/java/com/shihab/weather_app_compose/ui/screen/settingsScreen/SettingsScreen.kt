@@ -56,17 +56,24 @@ fun SettingsScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Settings", fontWeight = FontWeight.Bold) }, navigationIcon = {
-                IconButton(onClick = { navController.popBackStack() }) {
-                    Icon(Icons.Default.ArrowBack, contentDescription = "Back")
-                }
-            }, colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = Color.White,
-                titleContentColor = Color.Black,
-                navigationIconContentColor = Color.Black
+                title = {
+                    Text(
+                        "Settings",
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                navigationIcon = {
+                    IconButton(onClick = { navController.popBackStack() }) {
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                    }
+                }, colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = Color.White,
+                    titleContentColor = Color.Black,
+                    navigationIconContentColor = Color.Black
+                )
             )
-            )
-        }, containerColor = Color(0xFFF2F4F8)
+        },
+        containerColor = Color(0xFFF2F4F8)
     ) { padding ->
         Column(
             modifier = Modifier
@@ -84,9 +91,11 @@ fun SettingsScreen(navController: NavController) {
                     subtitle = if (isCelsius) "Celsius (°C)" else "Fahrenheit (°F)",
                     trailing = {
                         Switch(
-                            checked = !isCelsius, onCheckedChange = { isFahrenheit ->
+                            checked = !isCelsius,
+                            onCheckedChange = { isFahrenheit ->
                                 scope.launch { settingsStore.saveUnit(!isFahrenheit) }
-                            }, colors = SwitchDefaults.colors(checkedTrackColor = Color(0xFF29B6F6))
+                            },
+                            colors = SwitchDefaults.colors(checkedTrackColor = Color(0xFF29B6F6))
                         )
                     })
                 Divider(color = Color.LightGray.copy(alpha = 0.3f))
