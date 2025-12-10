@@ -10,7 +10,9 @@ data class WeatherResponse(
     @SerializedName("weather")
     val weather: List<WeatherDescription>,
     @SerializedName("wind")
-    val wind: WindData
+    val wind: WindData,
+    @SerializedName("visibility")
+    val visibility: Int
 )
 
 data class ForecastResponse(
@@ -24,12 +26,24 @@ data class ForecastItemData(
     @SerializedName("main")
     val main: MainData,
     @SerializedName("weather")
-    val weather: List<WeatherDescription>
+    val weather: List<WeatherDescription>,
+    @SerializedName("wind")
+    val wind: WindData,
+    @SerializedName("pop")
+    val pop: Double
 )
 
 data class MainData(
     @SerializedName("temp")
     val temperature: Double,
+    @SerializedName("feels_like")
+    val feelsLike: Double,
+    @SerializedName("temp_min")
+    val tempMin: Double,
+    @SerializedName("temp_max")
+    val tempMax: Double,
+    @SerializedName("pressure")
+    val pressure: Int,
     @SerializedName("humidity")
     val humidity: Int,
 )
