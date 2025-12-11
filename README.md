@@ -33,11 +33,11 @@ Unlike basic tutorials, WeatherLens incorporates **Jetpack DataStore** to handle
 
 ## 📱 Screenshots
 
-| **Home Screen (Day)** | **Home Screen (Night)** | **Settings (DataStore)** |
+| **Splash Screen** | **Home Screen (Night)** | **Settings Screen** |
 |:---:|:---:|:---:|
-| <img src="YOUR_DAY_IMAGE_LINK_HERE" width="250"> | <img src="YOUR_NIGHT_IMAGE_LINK_HERE" width="250"> | <img src="YOUR_SETTINGS_IMAGE_LINK_HERE" width="250"> |
+| <img src="" width="250"> | <img src="" width="250"> | <img src="" width="250"> |
 
-> *Depending on the weather condition, the UI background changes dynamically!*
+> *The UI background changes dynamically based on weather conditions and time of day!*
 
 ---
 
