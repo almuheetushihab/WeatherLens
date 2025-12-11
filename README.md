@@ -74,10 +74,9 @@ The app follows the **Guide to App Architecture** by Google.
     * **Remote:** Retrofit calls to OpenWeatherMap.
     * **Local:** DataStore reads/writes user preferences.
 
-```mermaid
 graph TD
-    UI[WeatherScreen (Compose)] -->|Observes| VM[WeatherViewModel]
-    VM -->|Fetches Data| Rep[Repository / Retrofit]
-    VM -->|Observes Settings| DS[DataStore Preferences]
-    Rep -->|API Call| Net[OpenWeatherMap API]
-    DS -->|Saves Unit| Local[Local Storage]
+    UI["WeatherScreen (Compose)"] -->|Observes| VM[WeatherViewModel]
+    VM -->|Fetches Data| Rep["Repository / Retrofit"]
+    VM -->|Observes Settings| DS["DataStore Preferences"]
+    Rep -->|API Call| Net["OpenWeatherMap API"]
+    DS -->|Saves Unit| Local["Local Storage"]
